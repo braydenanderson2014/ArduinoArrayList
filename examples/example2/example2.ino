@@ -18,7 +18,7 @@
 #include <ArrayList.h>
 
 // Create an ArrayList of integers
-ArrayList<String> myList(ArrayList<String>::FIXED); // Create an ArrayList of integers (default size is 10, can be changed in the constructor), or use ArrayList<int> myList(10) to specify the size
+ArrayList<String> myList(ArrayList<String>::FIXED); // Create an ArrayList of String with List being a Fixed Size (default size is 10, can be changed in the constructor), or use ArrayList<int> myList(10) to specify the size
 /*
 ArrayList<int> myList(ArrayList<int>::FIXED); // Create an ArrayList of integers with a fixed size (default size is 10, can be changed in the constructor), or use ArrayList<int> myList(ArrayList<int>::FIXED, 10) to specify the size
 ArrayList<int> myList(ArrayList<int>::DYNAMIC); // Create an ArrayList of integers with a dynamic size (default size is 10, can be changed in the constructor), or use ArrayList<int> myList(ArrayList<int>::DYNAMIC, 10) to specify the size
