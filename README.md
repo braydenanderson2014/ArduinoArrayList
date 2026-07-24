@@ -1,5 +1,7 @@
 # ArrayList Class
 
+[![Arduino Lint Status](https://github.com/braydenanderson2014/ArduinoArrayList/actions/workflows/check-arduino.yml/badge.svg)](https://github.com/braydenanderson2014/ArduinoArrayList/actions/workflows/check-arduino.yml)
+
 The `ArrayList` class is a C++ template class that provides an implementation of an ArrayList for easy storage of values of any designated type. It allows efficient storage and retrieval using indexes, similar to Java's `ArrayList`. The library supports sorting, memory optimizations through compiler directives, and advanced list operations.
 
 ## Overview
