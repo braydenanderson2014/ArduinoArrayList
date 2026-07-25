@@ -219,7 +219,7 @@ values.sort(descending, ArrayList<int>::MERGE_SORT);
 
 ## Changelog
 
-### 1.0.8-BETA
+### 1.0.8
 
 - Fixed `operator[]` undefined behavior by returning a reset static default reference for out-of-bounds access.
 - Fixed `getReference()` shared static corruption by resetting the fallback value on each out-of-bounds call.
