@@ -1,6 +1,6 @@
 # ArrayList
 
-Reference version: `1.0.8-BETA`
+Reference version: `1.0.8`
 
 [![Health](https://img.shields.io/badge/Health-TODO-lightgrey)](./)
 [![Tests](https://img.shields.io/badge/Tests-TODO-lightgrey)](./)
