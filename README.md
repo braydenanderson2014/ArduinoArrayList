@@ -1,6 +1,6 @@
 # ArrayList
 
-Reference version: `1.0.8`
+Reference version: `1.0.8-BETA`
 
 [![Health](https://img.shields.io/badge/Health-TODO-lightgrey)](./)
 [![Tests](https://img.shields.io/badge/Tests-TODO-lightgrey)](./)
@@ -219,7 +219,7 @@ values.sort(descending, ArrayList<int>::MERGE_SORT);
 
 ## Changelog
 
-### 1.0.8
+### 1.0.8-BETA
 
 - Fixed `operator[]` undefined behavior by returning a reset static default reference for out-of-bounds access.
 - Fixed `getReference()` shared static corruption by resetting the fallback value on each out-of-bounds call.
