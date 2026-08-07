@@ -774,8 +774,11 @@ public:
      */
     void reserveEstimated(size_t estimatedTotal) {
         if (estimatedTotal > arrayCapacity) {
+            const size_t previousCapacity = arrayCapacity;
             ensureCapacity(estimatedTotal);
-            resetSmartResizeCounters();
+            if (arrayCapacity != previousCapacity) {
+                resetSmartResizeCounters();
+            }
         }
     }
 #endif // AL_SMART_RESIZE
