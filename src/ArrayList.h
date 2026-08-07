@@ -734,6 +734,9 @@ public:
      * copy semantics (e.g. Arduino String).  If allocation fails, the list is unchanged.
      */
     void trimToSize() {
+#ifdef AL_SMART_RESIZE
+        smartShrink();
+#else
         // DYNAMIC and DYNAMIC2 behave identically here: both simply trim to count.
         if ((sizeType == DYNAMIC || sizeType == DYNAMIC2) && count < arrayCapacity) {
             T* newArray = new T[count];
@@ -745,6 +748,7 @@ public:
             array        = newArray;
             arrayCapacity = count;
         }
+#endif
     }
 #endif
 
