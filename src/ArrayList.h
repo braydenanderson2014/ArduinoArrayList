@@ -1081,15 +1081,21 @@ private:
     void smartResize() {
         if (sizeType == FIXED) return;
         smartResizeCount++;
+        const size_t maxSize = static_cast<size_t>(-1);
         size_t newCapacity;
         if (customResizeAmount > 0) {
-            newCapacity = arrayCapacity + customResizeAmount;
+            newCapacity = (arrayCapacity > maxSize - customResizeAmount)
+                              ? maxSize
+                              : (arrayCapacity + customResizeAmount);
         } else if (smartResizeCount >= AL_SMART_RESIZE_THRESHOLD) {
-            newCapacity = arrayCapacity * AL_SMART_RESIZE_MULTIPLIER;
+            newCapacity = (arrayCapacity > maxSize / AL_SMART_RESIZE_MULTIPLIER)
+                              ? maxSize
+                              : (arrayCapacity * AL_SMART_RESIZE_MULTIPLIER);
         } else if (sizeType == DYNAMIC) {
-            newCapacity = arrayCapacity * 2;
+            newCapacity = (arrayCapacity > maxSize / 2) ? maxSize : (arrayCapacity * 2);
         } else {
-            newCapacity = arrayCapacity + (arrayCapacity / 2);
+            const size_t half = arrayCapacity / 2;
+            newCapacity = (arrayCapacity > maxSize - half) ? maxSize : (arrayCapacity + half);
         }
         if (newCapacity <= count) {
             newCapacity = count + 1;
